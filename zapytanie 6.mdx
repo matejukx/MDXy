@@ -1,0 +1,6 @@
+//6. Jak średnio oceniani są poszczególni wykładowcy/instruktorzy przez kursantów?
+
+SELECT 
+{[Measures].[srednia_ocena_pracownika]} ON COLUMNS,
+NON EMPTY {([t Employee].[Employee Name].Children, [t Employee].[Employee Role].Children)} ON ROWS
+FROM [Hurtownia]

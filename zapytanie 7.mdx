@@ -1,0 +1,6 @@
+//7. Kim są najlepiej oceniani instruktorzy?
+
+SELECT 
+{[Measures].[srednia_ocena_pracownika]} ON COLUMNS,
+NON EMPTY {TOPCOUNT(([t Employee].[Employee Name].Children, [t Employee].[Employee Role].Children), 5, [Measures].[srednia_ocena_pracownika])} ON ROWS
+FROM [Hurtownia]
