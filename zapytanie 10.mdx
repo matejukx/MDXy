@@ -1,0 +1,9 @@
+//10. W jakich porach roku kursanci najczęściej nie zdają egzaminów?
+
+SELECT 
+    {[Measures].[Liczba studentów która podeszła do egz praktycznego]} ON COLUMNS,
+    NON EMPTY {TOPCOUNT([Date].[Season].Children, 2, [Measures].[Liczba studentów która podeszła do egz praktycznego])} ON ROWS
+FROM 
+    [Hurtownia]
+WHERE 
+    [t Exam Result].[Is Passed].&[0]
