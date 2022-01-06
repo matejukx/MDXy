@@ -1,0 +1,12 @@
+// Dodatkowe zapytania z użyciem operacji numerycznej
+// Ile średnio trwa kurs praktyczny kobiet i mężczyzn?
+
+WITH 
+	MEMBER [AVG Kurs praktyczny] AS 
+	'AVG([Measures].[Czas kursu praktycznego])'
+
+SELECT
+	 [AVG Kurs praktyczny] ON COLUMNS,
+	 [t Student].[Gender].[Gender] ON ROWS
+FROM
+	[Hurtownia]
