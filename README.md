@@ -17,3 +17,6 @@ and a numerical operation. - done... i guess
 If the queries defined in the first point do not fulfill 
 requirements defined in the second points it is needed to 
 formulate additional queries fulfilling the requirements.
+
+# Raport
+https://docs.google.com/document/d/1JK1mY7U_O7mquj-BFPwlSgsWTHr2wAzW3jPC3rNM10Q/edit?usp=sharing
