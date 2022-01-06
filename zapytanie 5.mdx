@@ -1,0 +1,9 @@
+// 5. Ile czasu średnio mija między rozpoczęciem kursu przez kursanta,a zdaniem obu egzaminów?
+
+
+SELECT
+	{[Measures].[sredni_czas_od_zakonczenia_kursu_do_egz_praktycznego]} ON COLUMNS
+FROM 
+	[Hurtownia]
+WHERE
+	[t Exam Result].[Is Passed].&[1]

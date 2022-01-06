@@ -1,0 +1,12 @@
+//2.  Jaki odsetek kursantów zdał egzamin teoretyczny/praktyczny w tym miesiącu? 
+
+WITH 
+	MEMBER 
+		[Measures].[Liczba zdanych] AS ([t Exam Result].[Is Passed].&[1], [Measures].[Liczba studentów która podeszła do egz praktycznego]), SOLVE_ORDER = 1
+	MEMBER
+		[Measures].[Zdawalnosc] AS ([Measures].[Liczba zdanych]/[Measures].[Liczba studentów która podeszła do egz praktycznego]), SOLVE_ORDER = 2,format_string="##.00%"
+SELECT 
+	{[Measures].[Zdawalnosc]} ON COLUMNS,
+	{ ([Date].[2016].[12] ) } ON ROWS
+FROM 
+	[Hurtownia]

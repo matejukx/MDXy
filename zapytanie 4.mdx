@@ -1,0 +1,12 @@
+// 4. Ilu kursantów szkoliło się w zeszłym miesiącu?
+
+WITH MEMBER
+	[Kursanci w poprzednim miesiącu] 
+	AS 
+	'(PARALLELPERIOD([Month].[Hierarchy].[Date Month], 1, [Month].[Hierarchy].CurrentMember), 
+	[Measures].[Liczba kursów miesięcznie])'
+SELECT 
+	{[Kursanci w poprzednim miesiącu]} ON COLUMNS,
+	{[Month].[Hierarchy].[2019].[3]} ON ROWS
+FROM 
+	[Hurtownia]

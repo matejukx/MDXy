@@ -5,9 +5,9 @@ WITH
 	MEMBER 
 		[Measures].[Liczba zdanych za pierwszym] AS ([t Exam Result].[Is Passed].&[1], [t Exam Result].[Take Number].&[Proba 1], [Measures].[Liczba studentów która podeszła do egz praktycznego]), SOLVE_ORDER = 1
 	MEMBER 
-		[Measures].[Zdawalnosc za pierwszym] AS ([Measures].[Liczba zdanych za pierwszym]/[Measures].[Liczba studentów która podeszła do egz praktycznego]), SOLVE_ORDER = 2
+		[Measures].[Zdawalnosc za pierwszym (%)] AS ([Measures].[Liczba zdanych za pierwszym]/[Measures].[Liczba studentów która podeszła do egz praktycznego] * 100), SOLVE_ORDER = 2
 SELECT 
-	{[Measures].[Zdawalnosc za pierwszym]} ON COLUMNS,
+	{[Measures].[Zdawalnosc za pierwszym (%)]} ON COLUMNS,
 	NON EMPTY {[Instructor].[Employee Name].Members} ON ROWS
 FROM 
 	[Hurtownia]
